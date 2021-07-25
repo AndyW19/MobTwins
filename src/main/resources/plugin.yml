@@ -1,0 +1,11 @@
+name: MobTwins
+version: ${project.version}
+main: mobtwins.mobtwins.MobTwins
+api-version: 1.13
+prefix: MobTwins
+authors: [ AndyW19 ]
+commands:
+  mobtwinsreload:
+    description: Reload plugin
+    usage: /<command>
+    permission: mobtwins.reload

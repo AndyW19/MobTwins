@@ -1,0 +1,15 @@
+sheep:
+  enabled: true
+  chance: 0.1
+cow:
+  enabled: true
+  chance: 0.1
+pig:
+  enabled: true
+  chance: 0.1
+rabbit:
+  enabled: true
+  chance: 0.4
+panda:
+  enabled: true
+  chance: 0.1
