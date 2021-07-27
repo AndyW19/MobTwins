@@ -13,3 +13,18 @@ rabbit:
 panda:
   enabled: true
   chance: 0.1
+dog:
+  enabled: true
+  chance: 0.1
+cat:
+  enabled: true
+  chance: 0.1
+horse:
+  enabled: true
+  chance: 0.1
+llama:
+  enabled: true
+  chance: 0.1
+fox:
+  enabled: true
+  chance: 0.1

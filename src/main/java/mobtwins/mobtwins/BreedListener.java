@@ -29,6 +29,21 @@ public class BreedListener implements Listener {
     private final boolean isPanda = MobTwins.getSettings().isPanda();
     private final double pandaChance = MobTwins.getSettings().getPandaChance();
 
+    private final boolean isDog = MobTwins.getSettings().isDog();
+    private final double dogChance = MobTwins.getSettings().getDogChance();
+
+    private final boolean isCat = MobTwins.getSettings().isCat();
+    private final double catChance = MobTwins.getSettings().getCatChance();
+
+    private final boolean isHorse = MobTwins.getSettings().isHorse();
+    private final double horseChance = MobTwins.getSettings().getHorseChance();
+
+    private final boolean isLlama = MobTwins.getSettings().isLlama();
+    private final double llamaChance = MobTwins.getSettings().getLlamaChance();
+
+    private final boolean isFox = MobTwins.getSettings().isFox();
+    private final double foxChance = MobTwins.getSettings().getFoxChance();
+
     @EventHandler
     public void onBreed(EntityBreedEvent event) {
         Location loc = event.getMother().getLocation();
@@ -64,6 +79,47 @@ public class BreedListener implements Listener {
                 if (isPanda && chance(pandaChance)) {
                     Panda panda = (Panda) event.getEntity().getWorld().spawnEntity(loc, EntityType.PANDA);
                     panda.setBaby();
+                }
+                break;
+            case WOLF:
+                if (isDog && chance(dogChance)) {
+                    Wolf baby = (Wolf) event.getEntity();
+                    Wolf wolf = (Wolf) event.getEntity().getWorld().spawnEntity(loc, EntityType.WOLF);
+                    wolf.setBaby();
+                    wolf.setCollarColor(baby.getCollarColor());
+                }
+                break;
+            case CAT:
+                if (isCat && chance(catChance)) {
+                    Cat baby = (Cat) event.getEntity();
+                    Cat cat = (Cat) event.getEntity().getWorld().spawnEntity(loc, EntityType.CAT);
+                    cat.setBaby();
+                    cat.setCatType(baby.getCatType());
+                    cat.setCollarColor(baby.getCollarColor());
+                }
+                break;
+            case HORSE:
+                if (isHorse && chance(horseChance)) {
+                    Horse baby = (Horse) event.getEntity();
+                    Horse horse = (Horse) event.getEntity().getWorld().spawnEntity(loc, EntityType.HORSE);
+                    horse.setBaby();
+                    horse.setColor(baby.getColor());
+                }
+                break;
+            case LLAMA:
+                if (isLlama && chance(llamaChance)) {
+                    Llama baby = (Llama) event.getEntity();
+                    Llama llama = (Llama) event.getEntity().getWorld().spawnEntity(loc, EntityType.LLAMA);
+                    llama.setBaby();
+                    llama.setColor(baby.getColor());
+                }
+                break;
+            case FOX:
+                if (isFox && chance(foxChance)) {
+                    Fox baby = (Fox) event.getEntity();
+                    Fox fox = (Fox) event.getEntity().getWorld().spawnEntity(loc, EntityType.FOX);
+                    fox.setBaby();
+                    fox.setFoxType(baby.getFoxType());
                 }
                 break;
         }
